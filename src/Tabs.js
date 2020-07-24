@@ -30,18 +30,18 @@ export default function Tabs(props) {
     {
       label: "Browser Print",
       path: parentPath,
-      content: <BrowserPrintComponent />,
+      component: <BrowserPrintComponent />,
       defaultTab: true
     },
     {
       label: "QZ",
       path: parentPath + "Qz",
-      content: <Qz/>,
+      component: <Qz />,
     },
     {
       label: "Pure JS",
       path: parentPath + "JS",
-      content: <JsPrint />,
+      component: <JsPrint />,
     }
   ]
   return (
@@ -49,7 +49,6 @@ export default function Tabs(props) {
       <h1>Printer App POC</h1>
       <div className={classes.tabs}>
         {tabsData.map((data, i) => {
-          console.log(parentPath, data.path, props.location.pathname)
           return (
             <NavLink
               key={i}
@@ -73,7 +72,7 @@ export default function Tabs(props) {
           return (
             <Route
               key={i}
-              component={() => data.content}
+              component={() => data.component}
               exact
               path={
                 data.defaultTab

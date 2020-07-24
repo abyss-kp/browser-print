@@ -1,7 +1,7 @@
 import React from 'react'
 import { Route, Switch, NavLink } from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles';
-import PrintComponent from './BrowserPrint/printComponent'
+import BrowserPrintComponent from './BrowserPrint/printerComponent'
 import JsPrint from './OnlyJS/JsPrint'
 import Qz from './QZ/Qz'
 const useStyles = makeStyles((theme) => ({
@@ -30,7 +30,7 @@ export default function Tabs(props) {
     {
       label: "Browser Print",
       path: parentPath,
-      content: <PrintComponent />,
+      content: <BrowserPrintComponent />,
       defaultTab: true
     },
     {

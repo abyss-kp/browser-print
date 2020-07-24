@@ -1,10 +1,6 @@
 import React, { useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
-import DialogTitle from '@material-ui/core/DialogTitle';
 import InputLabel from '@material-ui/core/InputLabel';
 import Input from '@material-ui/core/Input';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -31,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function PrinterDialog() {
+export default function PrinterComponent() {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const [deviceList, setDevices] = React.useState([]);
@@ -40,19 +36,13 @@ export default function PrinterDialog() {
 
   useEffect(() => {
     window.BrowserPrint.getLocalDevices(function (deviceList) {
-      console.log("Devices present in your network are: ", deviceList)
       setDevices(deviceList.printer)
     }, (err) => {
       console.log(err)
     })
-    // console.log(await Print_Service.getDevices())
-    // let defaults = Print_Service.defaultDevices()
   }, [])
   const handleChange = (event) => {
-    console.log(event.target)
     setPrinter(event.target.value);
-    // let z=new window.Zebra.Printer(event.target.value)
-    // setZebraPrinter(new window.Zebra.Printer(event.target.value))
   };
 
   const handleClickOpen = () => {
@@ -148,36 +138,6 @@ export default function PrinterDialog() {
         <Button onClick={checkConfig} color="primary" variant="outlined" disabled>Show Configs</Button>
         <Button onClick={handlePrint} color="primary" variant="contained" disabled={!printer}>Browser Print</Button>
         <iframe width="100%" id="info"></iframe>
-        {/* <Dialog disableBackdropClick disableEscapeKeyDown open={open} onClose={handleClose}>
-          <DialogTitle>Please select a printer</DialogTitle>
-          <DialogContent>
-            <form className={classes.container}>
-              <FormControl className={classes.formControl}>
-                <InputLabel id="demo-dialog-select-label">Printers</InputLabel>
-                <Select
-                  labelId="demo-dialog-select-label"
-                  id="demo-dialog-select"
-                  value={printer}
-                  onChange={handleChange}
-                  input={<Input />}
-                >
-                  {Object.keys(deviceList).map(device => <MenuItem value={10} key={device}>{device}</MenuItem>)}
-                </Select>
-              </FormControl>
-            </form>
-          </DialogContent>
-          <DialogActions>
-            <Button onClick={handleClose} color="primary">
-              Cancel
-          </Button>
-            <Button onClick={handleClose} color="primary" >
-              Fake Print
-          </Button>
-            <Button onClick={handleClose} color="primary" disabled={!printer}>
-              Print
-          </Button>
-          </DialogActions>
-        </Dialog> */}
       </div>
     </>
   );

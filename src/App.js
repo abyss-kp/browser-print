@@ -1,24 +1,20 @@
 import React from 'react';
+import { Route, Switch, withRouter, BrowserRouter as Router } from 'react-router-dom'
 // import './BrowserPrint-Zebra-1.0.216.min'
 // import './BrowserPrint-3.0.216.min.js'
-import Print from './Print';
-
-class App extends React.Component{
-  // componentDidMount() {
-  //   const script = document.createElement("script");
-  //   script.src = "./BrowserPrint-3.0.216.min.js"
-  //   script.async = true;
-  //   script.onload = () => this.scriptLoaded();
-  //   document.body.appendChild(script);
-  // }
-  // scriptLoaded=()=>{
-  //   console.log("********************")
-  // }
+import Print from './BrowserPrint/Print';
+import Tabs from './Tabs'
+class App extends React.Component {
+  parentPath = this.props.match.path;
   render() {
     return (
-      <Print />
+      <Router>
+        <Switch>
+          <Route component={Tabs} path={[this.parentPath]} />
+        </Switch>
+      </Router>
     );
   }
 }
 
-export default App;
+export default withRouter(App);

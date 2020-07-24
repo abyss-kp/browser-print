@@ -10,7 +10,7 @@ import Input from '@material-ui/core/Input';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
-import { Print_Service } from './printService'
+import { Print_Service } from '../printService'
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
@@ -25,7 +25,8 @@ const useStyles = makeStyles((theme) => ({
     flexWrap: 'wrap',
   },
   formControl: {
-    margin: theme.spacing(1),
+    marginTop:'5%',
+    marginBottom:'7%',
     minWidth: 120,
   },
 }));

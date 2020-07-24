@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Print_Service } from './printService'
+import { Print_Service } from '../printService'
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import PrinterDialog from './printerDialog'
@@ -9,10 +9,10 @@ const styles = (theme) => ({
     // maxWidth: 150,
     // marginTop: '5%',
     display: 'flex',
-    height: '90vh',
+    height: '80vh',
     flexDirection: 'column',
     alignItems: 'center',
-    justifyContent: 'space-around',
+    // justifyContent: 'space-around',
   },
   second: {
     textAlign: 'center',
@@ -78,12 +78,12 @@ class printComponent extends Component {
     const { classes } = this.props
     return (
       <div className={classes.root} >
-        <PrinterDialog className={classes.dialog} />
-        <iframe id="printf" name="printf" style={{ display: 'none' }} ></iframe>
+        <PrinterDialog />
+        {/*  <iframe id="printf" name="printf" style={{ display: 'none' }} ></iframe>
         <div className={classes.second}>
           <p>Below method does not use any library/application.<br /> It's pure JS but not the best way<br />Manually select the ZPL printer in next screen</p>
           <Button variant="contained" color="secondary" className={classes.boBP} onClick={this.handlePrint}>No BrowserPrint</Button>
-        </div>
+        </div> */}
       </div >
     )
   }

@@ -8,18 +8,29 @@ const useStyles = makeStyles((theme) => ({
   container: {
     // display: 'flex',
     // flexWrap: 'wrap',
-    textAlign: 'center'
+    textAlign: 'center',
+    "& h1": {
+      color: 'green !important',
+    }
   },
   tabs: {
     display: 'flex',
     justifyContent: 'space-around',
     border: '1px dashed grey',
     borderRadius: '8px',
-    backgroundColor: '#f2f2f2',
+    backgroundColor: 'black',
+   
     '& a': {
       textDecoration: 'none',
       fontWeight: 'bolder',
-      color: 'green'
+      color: 'white',
+      cursor: 'pointer',
+      fontSize: 'larger'
+    },
+    '& a:active,a:focus': {
+      color: 'black',
+      backgroundColor: '#f2f2f2',
+      width: '15%'
     }
   }
 }));
@@ -46,7 +57,7 @@ export default function Tabs(props) {
   ]
   return (
     <div className={classes.container}>
-      <h1>Printer App POC</h1>
+      <h1>POC App</h1>
       <div className={classes.tabs}>
         {tabsData.map((data, i) => {
           return (

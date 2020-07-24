@@ -51,9 +51,9 @@ class Qz extends Component {
   }
   componentDidMount() {
     const that = this
-    //reties 5 time in every 5 seconds if permission is denied
+    //reties 1 time in  15 seconds if permission is denied
     if (!qz.websocket.isActive())
-      qz.websocket.connect({ retries: 5, delay: 5 }).then(() => {
+      qz.websocket.connect({ retries: 1, delay: 15 }).then(() => {
         console.log("connected !!!!!")
         qz.printers.find().then(function (found) {
           console.log(found);
@@ -118,7 +118,7 @@ class Qz extends Component {
           <Button color="primary" variant="outlined" onClick={findPrinters}>List Devices</Button>
           {/* <Button color="primary" variant="outlined" disabled>Check Status</Button>
           <Button color="primary" variant="outlined" disabled>Show Configs</Button> */}
-          <Button color="primary" variant="contained" onClick={this.handlePrint} disabled={!this.state.selectedPrinter && !this.state.type}>Qz Print</Button>
+          <Button color="primary" variant="contained" onClick={this.handlePrint} disabled={!this.state.selectedPrinter || !this.state.type}>Qz Print</Button>
           <iframe width="100%" id="QzPrinter"></iframe>
         </div>
       </>

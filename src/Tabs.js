@@ -27,11 +27,16 @@ const useStyles = makeStyles((theme) => ({
       cursor: 'pointer',
       fontSize: 'larger'
     },
-    '& a:active,a:focus': {
-      color: 'black',
-      backgroundColor: '#f2f2f2',
-      width: '15%'
-    }
+    // '& a:active,a:focus': {
+    //   color: 'black',
+    //   backgroundColor: '#f2f2f2',
+    //   width: '15%'
+    // }
+  },
+  active:{
+    color: 'black !important',
+    backgroundColor: '#f2f2f2',
+    width: '15%'
   }
 }));
 export default function Tabs(props) {
@@ -64,7 +69,7 @@ export default function Tabs(props) {
             <NavLink
               key={i}
               to={data.path}
-              activeClassName="active"
+              activeClassName={classes.active}
               isActive={(match, location) =>
                 data.defaultTab
                   ? [parentPath, data.path].includes(location.pathname)

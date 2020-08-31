@@ -21,8 +21,8 @@ const useStyles = makeStyles((theme) => ({
     flexWrap: 'wrap',
   },
   formControl: {
-    marginTop:'5%',
-    marginBottom:'7%',
+    marginTop: '5%',
+    marginBottom: '7%',
     minWidth: 120,
   },
 }));
@@ -73,46 +73,46 @@ export default function PrinterComponent() {
     ^XA
 
 ^FX Top section with logo, name and address.
-^CF0,60
-^FO50,50^GB100,100,100^FS
-^FO75,75^FR^GB100,100,100^FS
-^FO93,93^GB40,40,40^FS
-^FO220,50^FDDriscolls, Inc.^FS
-^CF0,30
-^FO220,115^FDWatsonville^FS
-^FO220,155^FDCalifornia^FS
-^FO220,195^FDUnited States (USA)^FS
-^FO50,250^GB700,1,3^FS
+^CF0,20
+^FO10,10^GB25,25,25^FS
+^FO20,20^FR^GB25,25,25^FS
+^FO24,24^GB8,8,8^FS
+^FO50,25^FDDriscolls, Inc.^FS
+^CF0,18
+^FO50,55^FDWatsonville^FS
+^FO50,75^FDCalifornia^FS
+^FO50,95^FDUnited States (USA)^FS
+^FO10,120^GB700,1,3^FS
 
 ^FX Second section with recipient address and permit information.
-^CFA,30
-^FO50,300^FDKapil Pandey^FS
-^FO50,340^FD100 Main Street^FS
-^FO50,380^FDSpringfield TN 39021^FS
-^FO50,420^FDUnited States (USA)^FS
-^CFA,15
-^FO600,300^GB150,150,3^FS
-^FO638,340^FDPermit^FS
-^FO638,390^FD123456^FS
-^FO50,500^GB700,1,3^FS
+^CF0,8
+^FO20,140^FDKapil Pandey^FS
+^FO20,160^FD100 Main Street^FS
+^FO20,180^FDSpringfield TN 39021^FS
+^FO20,200^FDUnited States (USA)^FS
+^CFA,10
+^FO125,145^GB60,60,2^FS
+^FO135,160^FDPermit^FS
+^FO135,180^FD123456^FS
+^FO10,230^GB700,1,3^FS
 
 ^FX Third section with barcode.
-^BY5,2,270
-^FO100,550^BC^FD12345678^FS
+^BY1,2,50
+^FO38,250^BC^FD12345678^FS
 
 ^FX Fourth section (the two boxes on the bottom).
-^FO50,900^GB700,250,3^FS
-^FO400,900^GB1,250,3^FS
-^CF0,40
-^FO100,960^FDCtr. X34B-1^FS
-^FO100,1010^FDREF1 F00B47^FS
-^FO100,1060^FDREF2 BL4H8^FS
-^CF0,190
-^FO470,955^FDCA^FS
+^FO20,330^GB160,70,2^FS
+^FO130,330^GB1,70,2^FS
+^CFA,10
+^FO40,340^FDCtr. X34B-1^FS
+^FO40,360^FDREF1 F00B47^FS
+^FO40,380^FDREF2 BL4H8^FS
+^CFF,10
+^FO140,355^FDCA^FS
 
 ^XZ
     `
-    Print_Service.print(printer,networkCallResponse)
+    Print_Service.print(printer, networkCallResponse)
   }
   const handleClose = () => {
     setOpen(false);

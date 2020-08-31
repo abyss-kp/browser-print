@@ -72,43 +72,23 @@ export default function PrinterComponent() {
     let networkCallResponse = `
     ^XA
 
-^FX Top section with logo, name and address.
+^FX Top section with square logo
 ^CF0,20
-^FO10,10^GB25,25,25^FS
-^FO20,20^FR^GB25,25,25^FS
-^FO24,24^GB8,8,8^FS
-^FO50,25^FDDriscolls, Inc.^FS
-^CF0,18
-^FO50,55^FDWatsonville^FS
-^FO50,75^FDCalifornia^FS
-^FO50,95^FDUnited States (USA)^FS
-^FO10,120^GB700,1,3^FS
+^FO10,10^GB35,35,35^FS
+^FO18,18^FR^GB35,35,35^FS
+^FO23,23^GB16,16,16^FS
 
-^FX Second section with recipient address and permit information.
-^CF0,8
-^FO20,140^FDKapil Pandey^FS
-^FO20,160^FD100 Main Street^FS
-^FO20,180^FDSpringfield TN 39021^FS
-^FO20,200^FDUnited States (USA)^FS
-^CFA,10
-^FO125,145^GB60,60,2^FS
-^FO135,160^FDPermit^FS
-^FO135,180^FD123456^FS
-^FO10,230^GB700,1,3^FS
+^FX Top section with square name and address
+^FO70,13^FDDriscolls, Inc.^FS
+^CFA,19
+^FO70,35^FDWatsonville^FS
+^FO70,55^FDCalifornia^FS
+^FO70,75^FDUnited States (USA)^FS
+^FO10,100^GB700,1,1^FS
 
-^FX Third section with barcode.
-^BY1,2,50
-^FO38,250^BC^FD12345678^FS
-
-^FX Fourth section (the two boxes on the bottom).
-^FO20,330^GB160,70,2^FS
-^FO130,330^GB1,70,2^FS
-^CFA,10
-^FO40,340^FDCtr. X34B-1^FS
-^FO40,360^FDREF1 F00B47^FS
-^FO40,380^FDREF2 BL4H8^FS
-^CFF,10
-^FO140,355^FDCA^FS
+^FX Second section with barcode.
+^BY2,2,35
+^FO60,110^BC^FD12345678^FS
 
 ^XZ
     `
